@@ -1,0 +1,27 @@
+1. strona internetowa umożliwia logowanie, rejestrację konta użytkownika
+
+2. na koncie użytkownik może sprawdzić statystyki bohaterów i przedmiotów,
+   zapisywać swoje buildy i udostępnić go innym, porównać postacie, dodać notatkę (porady)
+
+3. można utworzyć również konto z większymi uprawnieniami umożliwiające
+   dodawanie/usuwanie postaci/przedmiotów
+ 
+4. bez logowania strona umożliwia sprawdzenie statystyk bohaterów i przedmiotów,
+   porównanie bohaterów, sprawdzenie counter-pick'ów
+   
+*  Opcja przypominania hasła na maila
+*  Sprawdzanie spójności sesji
+
+-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+
+Technologie:
+HTML 5, CSS, JavaScript, PHP / Python, jQuery, SQL - Oracle
+SCD2 - historia zmian w bazie (przedmioty/bohaterowie)
+
+-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+
+Projekt podzielony na 4 iteracje:
+1) logowanie + rejestracja + baza danych + dodawanie/usuwanie przedmiotów/bohaterów (special user)
+2) bohaterowie (opisy) + przedmioty (opisy) + porównanie bohaterów/przedmiotów
+3) counter-pick'i i zapisywanie buildów
+4) przywracanie hasła + spójność sesji + ewentualne poprawki
