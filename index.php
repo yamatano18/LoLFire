@@ -19,14 +19,6 @@
     <meta name="keywords" content="league, of, legends, build, buildy, builds, counter, kontry, character, hero, bohaterowie, description, opis"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script>
-        jQuery(document).ready(function($){
-          slide = function(obj) {
-            $(obj).stop().slideToggle();
-            };
-        });
-    </script>
 </head>
 <body>
     <div id="container">
