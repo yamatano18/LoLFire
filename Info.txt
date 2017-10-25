@@ -22,7 +22,11 @@ SCD2 - historia zmian w bazie (przedmioty/bohaterowie)
 -	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
 
 Projekt podzielony na 4 iteracje:
+
 1) logowanie + rejestracja + baza danych + dodawanie/usuwanie przedmiotów/bohaterów (special user)
+
 2) bohaterowie (opisy) + przedmioty (opisy) + porównanie bohaterów/przedmiotów
+
 3) counter-pick'i i zapisywanie buildów
+
 4) przywracanie hasła + spójność sesji + ewentualne poprawki
