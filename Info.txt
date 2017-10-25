@@ -1,4 +1,4 @@
-1. strona internetowa umożliwia logowanie, rejestrację konta użytkownika
+﻿1. strona internetowa umożliwia logowanie, rejestrację konta użytkownika
 
 2. na koncie użytkownik może sprawdzić statystyki bohaterów i przedmiotów,
    zapisywać swoje buildy i udostępnić go innym, porównać postacie, dodać notatkę (porady)
@@ -11,6 +11,7 @@
    
 *  Opcja przypominania hasła na maila
 *  Sprawdzanie spójności sesji
+*  Walidacje
 
 -	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
 
