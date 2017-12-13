@@ -2,13 +2,21 @@
 
     session_start();
 	
+	if (!isset($_SESSION['success_reg'])){
+		header('Location: index.php');
+		exit();
+	}
+    else
+    {
+        unset($_SESSION['success_reg']);
+    }
 ?>
 
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
     <meta charset="utf-8"/>
-    <title>LoLFire</title>
+    <title>LoLFire - WITAJ!</title>
     <meta name="description" content="Grasz w League of Legends i szukasz nowych buildów lub innej pomocy? Ta strona jest właśnie dla Ciebie!"/>
     <meta name="keywords" content="league, of, legends, build, buildy, builds, counter"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -61,13 +69,8 @@
 			</div>
 		</div>
 		<div id="login">
-			<p>
-                <a href="login.php">Zaloguj się!</a>
-            </p>
-			<p>
-                Nie posiadasz jeszcze konta?<br/>
-                <a href="register.php">Zarejestruj się!</a>
-            </p>
+		    <p>Dziękujemy za rejestrację w serwisie.</p>
+            <a href="login.php">Zaloguj się na swoje konto!</a>
 		</div>
 		
 	</div>

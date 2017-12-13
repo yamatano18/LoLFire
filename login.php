@@ -1,6 +1,12 @@
 <?php
 
-    session_start();
+	session_start();
+
+    if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+    {
+        header('Location: index.php');
+        exit();
+    }
 	
 ?>
 
@@ -61,15 +67,24 @@
 			</div>
 		</div>
 		<div id="login">
-			<p>
-                <a href="login.php">Zaloguj się!</a>
-            </p>
-			<p>
+			<form action="zaloguj.php" method="post">
+                <?php
+                    if (isset($_SESSION['blad']))
+                        echo $_SESSION['blad'];
+                ?>
+				Login: <br/>
+				<input type="text" name="login"> <br/>
+				Hasło: <br/>
+				<input type="password" name="haslo"> <br/>
+				<br/>
+				<input type="submit" value="Zaloguj się"/>
+			</form>
+            <p>
                 Nie posiadasz jeszcze konta?<br/>
                 <a href="register.php">Zarejestruj się!</a>
             </p>
 		</div>
-		
+
 	</div>
 </body>
 </html>

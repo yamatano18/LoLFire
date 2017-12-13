@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-	
+
 ?>
 
 <!DOCTYPE HTML>
@@ -12,7 +12,8 @@
     <meta name="description" content="Grasz w League of Legends i szukasz nowych buildów lub innej pomocy? Ta strona jest właśnie dla Ciebie!"/>
     <meta name="keywords" content="league, of, legends, build, buildy, builds, counter"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
- 	<link rel="stylesheet" type="text/css" href="styles/main.css"> 
+ 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/content.css">
 </head>
 <body>
     <div id="container">
@@ -30,7 +31,7 @@
 			<div class="drop_down">
 				<a href="heroes.php"><button class="drop_button">Bohaterowie</button></a>
 				<div class="drop_down-content">
-					<a href="a21">Znajdź bohatera</a>
+					<a href="heroes.php">Znajdź bohatera</a>
 					<a href="a22">Porównaj </a>
 					<a href="a23">*Dodaj</a>
 				</div>
@@ -60,16 +61,41 @@
 				</div>
 			</div>
 		</div>
-		<div id="login">
-			<p>
-                <a href="login.php">Zaloguj się!</a>
-            </p>
-			<p>
-                Nie posiadasz jeszcze konta?<br/>
-                <a href="register.php">Zarejestruj się!</a>
-            </p>
+		<div class="content">
+<?php
+    require_once "connect.php";
+    $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+    if ($connection->connect_errno != 0)   
+	{
+		echo "Error: ".$connection->connect_errno;
+	}
+	else
+	{
+		if ($result = @$connection->query(sprintf("SELECT * FROM champions")))
+		{
+			$num_of_heroes = $result->num_rows;
+			if ($num_of_heroes > 0)
+			{
+                for ($i=1; $i <= $num_of_heroes; $i++)
+                {
+                $row[$i] = $result->fetch_assoc();
+                echo '
+                    <div class="hero_button">
+                        <div class="hero_icon">
+                            <a href="champions_pages/'.strtolower($row[$i]['name']).'.php">
+                                <img src="champion_icons/'.$row[$i]['icon'].'" alt="ikona '.$row[$i]['name'].'">
+                            </a>
+                            <a class="hero_name_link" href="champions_pages/'.strtolower($row[$i]['name']).'.php">'.$row[$i]['name'].'</a>
+                        </div>
+                    </div>
+                    ';
+                }
+            }
+            $connection->close();
+        }
+    }
+?>
 		</div>
-		
 	</div>
 </body>
 </html>

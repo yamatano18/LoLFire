@@ -2,6 +2,11 @@
 
     session_start();
 	
+	if(!isset($_SESSION['zalogowany'])){
+		header('Location: login.php');
+		exit();
+	}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -61,15 +66,14 @@
 			</div>
 		</div>
 		<div id="login">
-			<p>
-                <a href="login.php">Zaloguj się!</a>
-            </p>
-			<p>
-                Nie posiadasz jeszcze konta?<br/>
-                <a href="register.php">Zarejestruj się!</a>
-            </p>
+		<?php
+			if(isset($_SESSION['username']) && !empty($_SESSION['username']));
+			{
+				echo "Witaj ".$_SESSION['username']."!";
+				echo '<p><a href="logout.php">Wyloguj się!</a></p>';
+			}
+		?>
 		</div>
-		
 	</div>
 </body>
 </html>
