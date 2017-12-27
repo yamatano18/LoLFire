@@ -1,6 +1,6 @@
 <?php
     $host = "localhost";
-	$db_user = "id3445076_lexuy";
-	$db_password = "KociaK";
-	$db_name = "id3445076_lolfiredb";
+	$db_user = "root";
+	$db_password = "";
+	$db_name = "lolfire";
 ?>

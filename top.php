@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-
+	
 ?>
 
 <!DOCTYPE HTML>
@@ -31,7 +31,7 @@
 			<div class="drop_down">
 				<a href="heroes.php"><button class="drop_button">Bohaterowie</button></a>
 				<div class="drop_down-content">
-					<a href="heroes.php">Znajdź bohatera</a>
+					<a href="a21">Znajdź bohatera</a>
 					<a href="a22">Porównaj </a>
 					<a href="a23">*Dodaj</a>
 				</div>
@@ -61,41 +61,3 @@
 				</div>
 			</div>
 		</div>
-		<div class="content">
-<?php
-    require_once "connect.php";
-    $connection = @new mysqli($host, $db_user, $db_password, $db_name);
-    if ($connection->connect_errno != 0)   
-	{
-		echo "Error: ".$connection->connect_errno;
-	}
-	else
-	{
-		if ($result = @$connection->query(sprintf("SELECT * FROM champions order by name")))
-		{
-			$num_of_heroes = $result->num_rows;
-			if ($num_of_heroes > 0)
-			{
-                for ($i=1; $i <= $num_of_heroes; $i++)
-                {
-                $row[$i] = $result->fetch_assoc();
-                echo '
-                    <div class="hero_button">
-                        <div class="hero_icon">
-                            <a href="champ_desc.php?champ='.($row[$i]['name']).'">
-                                <img src="champion_icons/'.$row[$i]['icon'].'" alt="ikona '.$row[$i]['name'].'">
-                            </a>
-                            <a class="hero_name_link" href="champ_desc.php?champ='.($row[$i]['name']).'">'.$row[$i]['name'].'</a>
-                        </div>
-                    </div>
-                    ';
-                }
-            }
-            $connection->close();
-        }
-    }
-?>
-		</div>
-	</div>
-</body>
-</html>

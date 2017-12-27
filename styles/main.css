@@ -3,11 +3,10 @@ body
     margin: 0px;
     width: 100%;
     height: 100%;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     /* Background pattern from Subtle Patterns */
-    background-image: url("/LoLFire/backgrounds/bg2.jpg");
+    background-image: url("/lolfire_new/backgrounds/back1.png");
     background-position: center;
-    background-repeat: repeat-x;
     font-size: 20px;
     color: #ffffff;
 }
@@ -15,34 +14,58 @@ body
 #container
 {
     min-width: 1300px;
+    max-width: 1820px;
     font-family: 'Lobster Two', cursive;
     padding: 0px;
     width: 100%;
-    align-items: center; 
+    align-items: center;
 }
 
 .menu
 {
     width: 100%;
     min-height: 60px;
+    max-height: 100px;
     padding: 16px;
     background-color: #332a2a;
 }
 
+.logo
+{
+    width: 200px;
+    height: 55px;
+	float: left;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.8s;
+    transform: scale(1.0);
+}
+.logo:hover
+{
+    width: 240px;
+    height: 65px;
+    position: relative;
+}
+
+
 #login
 {
     float: right;
-    width: 30%;
-    background-color: #1b3e3e;
+    width: 900px;
+    background-image: url("../backgrounds/back_menu3.png");
+    background-position: center;
     padding: 16px;
     text-align: center;
     font-size: 25px;
-    margin-top: 10%;
-    margin-right: 15%;
-    padding-bottom: 2%;
+    margin-top: 10px;
+    margin-right: 100px;
+    padding-bottom: 5px;
+    box-shadow: 10px 10px 5px #888888;
 }
 
-.drop_button {
+.drop_button
+{
     background-color: #000000;
     color: white;
     padding: 16px;
@@ -51,7 +74,8 @@ body
     border: none;
     cursor: pointer;
 }
-.drop_down {
+.drop_down
+{
     float: left;
     position: relative;
     display: inline-block;
@@ -61,14 +85,17 @@ body
     margin-left: 20px;
     text-align: center;
 }
-.drop_down-content {
+
+.drop_down-content
+{
     display: none;
     position: absolute;
     background-color: #131313;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-.drop_down-content a {
+.drop_down-content a
+{
     color: #ffffff;
     padding: 12px 16px;
     text-decoration: none;
@@ -76,45 +103,64 @@ body
 }
 .drop_down-content a:hover
 {
-    background-color: #323232
-}
-.drop_down:hover .drop_down-content {
-    display: block;
-}
-.drop_down:hover .drop_button {
     background-color: #323232;
+    color: #e97531;
+}
+.drop_down-content a:active
+{
+    background-color: #323232;
+    color: #e97531;
 }
 
-.buttonLink:link {
-    text-decoration: none;
-		color: white;
+.drop_down:hover .drop_down-content
+{
+    display: block;
+    color: #e97531;
+}
+.drop_down:hover .drop_button
+{
+    background-color: #323232;
+    color: #e97531;
 }
 
-.buttonLink:visited {
+.buttonLink:link
+{
     text-decoration: none;
-		color: white;
+    color: #FFF;
+}
+.buttonLink:visited
+{
+    text-decoration: none;
+	color: #FFF;
+}
+.buttonLink:hover
+{
+    text-decoration: none;
+	color: #e97531;
+}
+.buttonLink:active
+{
+    text-decoration: none;
+	color: #e97531;
 }
 
-.buttonLink:hover {
+.hero_name_link
+{
     text-decoration: none;
-		color: white;
+    color: #FFF;
 }
-
-.buttonLink:active {
+.hero_name_link:visited
+{
     text-decoration: none;
-		color: white;
+    color: #FFF;
 }
-.buttonLink:visited {
+.hero_name_link:hover
+{
     text-decoration: none;
-		color: white;
+	color: #e97531;
 }
-
-.buttonLink:hover {
+.hero_name_link:active
+{
     text-decoration: none;
-		color: white;
-}
-
-.buttonLink:active {
-    text-decoration: none;
-		color: white;
+	color: #e97531;
 }

@@ -1,0 +1,173 @@
+.content
+{
+    min-width: 1100px;
+    max-width: 1520px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content_image
+{
+    width: 400px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 10px;
+    position: relative;
+    float: right;
+    box-shadow: 0 0 20px 10px #000000;
+}
+
+.sklepikarz_img
+{
+    width: 330px;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    float: left;
+    box-shadow: 0 0 16px 8px #000000;
+}
+
+.paragraph
+{
+    margin-left: 10px;
+    float: left;
+}
+
+.hero_button
+{
+    float: left;
+    margin-top: 10px;
+    width: 170px;
+    height: 200px;
+    font-size: 26px;
+    text-align: center;
+    -o-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+.hero_button:hover
+{    
+    -o-transition: all 0.8s;
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -webkit-transform: scale(1.2);
+}
+
+.hero_icon img 
+{
+    margin-left: 10px;
+    margin-top: 10px;
+    -o-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    border-radius: 25px;
+    border-color: #000;
+    border-style: solid;
+    border-width: 5px;
+}
+.hero_icon img:hover
+{
+    -o-transition: all 0.8s;
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -webkit-transform: scale(1.1);
+    border-color: #e97531;
+}
+
+.hero_description
+{
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.middle
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: #e97531;
+    font-size: 50px;
+    font-family: arial;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.champ_image
+{
+    margin-top: 10px;
+    height: 500px;
+    width: auto;
+    border-radius: 20px;
+    border: 3px solid #e97531;
+    box-shadow: 0 0 40px 20px #000000;
+}
+
+.skill_content
+{
+    float: left;
+    font-size: 15px;
+    font-family: arial;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.skill_name
+{
+    float: left;
+    font-size: 21px;
+    color: #e97531;
+    margin-bottom: 0px;
+    width: 400px;
+}
+.skill_values_cost
+{
+    float: right;
+    text-align: left;
+    font-size: 17px;
+    color: #3eb8f8;
+    margin-bottom: 0px;
+    width: 300px;
+}
+.skill_values_cooldown
+{
+    float: right;
+    text-align: left;
+    font-size: 17px;
+    color: #60c616;
+    margin-bottom: 0px;
+    width: 350px;
+}
+
+.skill_icon
+{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 3px solid #e97531;
+    border-radius: 10px;
+    box-shadow: 0 0 16px 8px #000000;
+}
+.skill_description
+{
+    text-align: left;
+}
+
+.clear
+{
+    clear:both;
+}
+
+hr
+{
+    width: 100%;
+}
