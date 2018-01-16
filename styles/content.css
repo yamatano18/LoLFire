@@ -1,7 +1,6 @@
 .content
 {
-    min-width: 1100px;
-    max-width: 1520px;
+    width: 1500px;
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -116,6 +115,7 @@
     font-family: arial;
     margin-top: 10px;
     margin-bottom: 20px;
+    width: 1300px;
 }
 
 .skill_name
@@ -133,7 +133,7 @@
     font-size: 17px;
     color: #3eb8f8;
     margin-bottom: 0px;
-    width: 300px;
+    width: 350px;
 }
 .skill_values_cooldown
 {
@@ -157,9 +157,12 @@
     border-radius: 10px;
     box-shadow: 0 0 16px 8px #000000;
 }
+
 .skill_description
 {
     text-align: left;
+    width: 1130px;
+    float: left;
 }
 
 .clear
@@ -170,4 +173,116 @@
 hr
 {
     width: 100%;
+    border-width: 2px;
 }
+
+.item_button
+{
+    float: left;
+    margin-top: 10px;
+    width: 150px;
+    height: 180px;
+    font-size: 20px;
+    text-align: center;
+    -o-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+.item_button:hover
+{    
+    -o-transition: all 0.8s;
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -webkit-transform: scale(1.2);
+}
+
+.item_icon img 
+{
+    margin: 0px;
+    -o-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    border-radius: 25px;
+    border-color: #000;
+    border-style: solid;
+    border-width: 5px;
+    width: 100px;
+    height: auto;
+}
+.item_icon img:hover
+{
+    -o-transition: all 0.8s;
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -webkit-transform: scale(1.1);
+    border-color: #e97531;
+}
+
+/* item page layout / wygląd dla strony item_desc.php */
+.item_description
+{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    text-align: left;
+    font-family: arial;
+}
+
+.left
+{
+    display: block;
+    float: left;
+    width: auto;
+    margin-left: 20px;
+}
+
+.item_name
+{
+    text-align: left;
+    display: block;
+    color: #e97531;
+    font-size: 60px;
+    font-family: tahoma;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.item_icon_big
+{
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #e97531;
+    border-radius: 10px;
+    box-shadow: 0 0 16px 8px #000;
+}
+
+.item_cost
+{
+    float: left;
+    text-align: left;
+    font-size: 22px;
+    color: #f7ca00;
+    margin-top: 20px;
+    width: auto;
+}
+
+.item_details
+{
+    float: left;
+    text-align: left;
+    font-size: 20px;
+    font-family: tahoma;
+    color: #e97531;
+    margin-bottom: 5px;
+    width: 100%;
+}
+

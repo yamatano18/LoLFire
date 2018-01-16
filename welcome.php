@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		<div id="login">
-		    <p>Dziękujemy za rejestrację w serwisie.</p>
+		    <p>Dziękujemy za rejestrację.</p>
             <a href="login.php">Zaloguj się na swoje konto!</a>
 		</div>
 		

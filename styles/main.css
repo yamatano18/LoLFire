@@ -8,17 +8,17 @@ body
     background-image: url("/lolfire_new/backgrounds/back1.png");
     background-position: center;
     font-size: 20px;
-    color: #ffffff;
+    color: #FFF;
 }
 
 #container
 {
-    min-width: 1300px;
-    max-width: 1820px;
+    width: 1500px;
     font-family: 'Lobster Two', cursive;
     padding: 0px;
-    width: 100%;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu
@@ -28,6 +28,8 @@ body
     max-height: 100px;
     padding: 16px;
     background-color: #332a2a;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo
@@ -52,22 +54,129 @@ body
 #login
 {
     float: right;
-    width: 900px;
-    background-image: url("../backgrounds/back_menu3.png");
-    background-position: center;
+    width: 490px;
+    background-image: url("/lolfire_new/backgrounds/back_menu5.jpg");
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: center top;
+    background-size: cover;
     padding: 16px;
     text-align: center;
-    font-size: 25px;
-    margin-top: 10px;
-    margin-right: 100px;
-    padding-bottom: 5px;
-    box-shadow: 10px 10px 5px #888888;
+    font-size: 24px;
+    color: #e97531;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 10px #000;
+}
+
+#news
+{
+    float: left;
+    width: 740px;
+    height: 800px;
+    background-color: #2c2a29;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 10px #000;
+}
+
+#user_info
+{
+    float: right;
+    color: #e97531;
+    background-color: #000;
+    font-size: 22px;
+    padding: 10px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 1s;
+    transform: scale(1.0);
+}
+#user_info:hover
+{
+    font-size: 30px;
+    background-color: #131313;
+}
+
+.logout
+{
+    float: right;
+    margin-right: 50px;
+    margin-left: 20px;
+}
+.logout_icon
+{
+    margin-left: auto;
+    width: 55px;
+    height: auto;
+    position: relative;
+    transition: all 1s;
+    transform: scale(1.0);
+}
+
+.logout_icon:hover
+{
+    float: right;
+    margin-right: auto;
+    width: 70px;
+    height: auto;
+}
+
+#settings
+{
+    width: 1200px;
+    height: 700px;
+    background-image: url("/lolfire_new/backgrounds/back_menu5.jpg");
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: center top;
+    background-size: cover;
+    text-align: center;
+    font-size: 24px;
+    color: #e97531;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 10px #000;
+}
+
+.sett_left
+{
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 590px;
+    float: left;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 10px #511c81;
+}
+
+.sett_right
+{
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 490px;
+    float: right;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 10px #511c81;
+}
+
+.heading
+{
+    font-size: 40px;
 }
 
 .drop_button
 {
-    background-color: #000000;
-    color: white;
+    background-color: #000;
+    color: #FFF;
     padding: 16px;
     min-width: 160px;
     font-size: 20px;
@@ -81,7 +190,7 @@ body
     display: inline-block;
     width: 160px;
     height: 50px;
-    background-color: #000000;
+    background-color: #000;
     margin-left: 20px;
     text-align: center;
 }
@@ -92,11 +201,11 @@ body
     position: absolute;
     background-color: #131313;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px #000;
 }
 .drop_down-content a
 {
-    color: #ffffff;
+    color: #FFF;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -144,6 +253,99 @@ body
 	color: #e97531;
 }
 
+.input_div
+{
+    color: #FFF;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #400b70;
+    width: 300px;
+    height: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border-color: #e97531;
+    border-style: solid;
+    border-width: 3px; 
+}
+
+.click_div
+{
+    color: #FFF;
+    font-size: 24px;
+    background-color: #400b70;
+    width: 200px;
+    height: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border-color: #e97531;
+    border-style: solid;
+    border-width: 3px; 
+}
+.click_div:hover
+{
+    transition: all 0.8s;
+    transform: scale(1.1);
+    position: relative;
+    background-color: #511c81;
+}
+
+.div_link
+{
+    color: #FFF;
+    text-decoration: none;
+    background-color: #400b70;
+    width: 230px;
+    height: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border-color: #e97531;
+    border-style: solid;
+    border-width: 3px; 
+    text-align: center;
+}
+.div_link:hover
+{
+    transition: all 0.8s;
+    transform: scale(1.1);
+    position: relative;
+    background-color: #511c81;
+}
+
+.link
+{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 28px;
+    padding: 5px;
+}
+
+.change_button
+{
+    border-radius: 10px;
+    border-color: #e97531;
+    border-style: solid;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.checkbox_input
+{
+    width: 20px;
+    height: 20px;
+}
+    
 .hero_name_link
 {
     text-decoration: none;
@@ -163,4 +365,33 @@ body
 {
     text-decoration: none;
 	color: #e97531;
+}
+
+.item_name_link
+{
+    text-decoration: none;
+    color: #FFF;
+}
+.item_name_link:visited
+{
+    text-decoration: none;
+    color: #FFF;
+}
+.item_name_link:hover
+{
+    text-decoration: none;
+	color: #e97531;
+}
+.item_name_link:active
+{
+    text-decoration: none;
+	color: #e97531;
+}
+
+.captcha
+{
+    margin-top: 10px;
+    width: 302px;
+    margin-left: auto;
+    margin-right: auto;
 }

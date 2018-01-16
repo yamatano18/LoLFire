@@ -68,7 +68,7 @@
     if ($connection->connect_errno != 0)   
 	{
         /* Błąd podczas łączenia z bazą danych */
-		echo "Error: ".$connection->connect_errno;
+        throw new Exception(mysqli_connect_errno());
 	}
 	else
 	{
@@ -99,7 +99,7 @@
                                         <div class="clear"></div>
                                         <hr>
                                         <img class="skill_icon" src="champion_icons/skills_icons/'.$skills['passive_icon'].'"  alt="Ikona passyw">
-                                        '.$skills['passive_desc'].'
+                                        <div>'.$skills['passive_desc'].'</div>
                                     </div>
                                     <div class="skill_content">
                                         <p class="skill_name"><b>'.$skills['q_skill'].'</b></p>
@@ -108,7 +108,7 @@
                                         <div class="clear"></div>
                                         <hr/>
                                         <img class="skill_icon" src="champion_icons/skills_icons/'.$skills['q_icon'].'"  alt="Ikona Q">
-                                        <p>'.$skills['q_desc'].'</p>
+                                        <div>'.$skills['q_desc'].'</div>
                                     </div>
                                     <div class="skill_content">
                                         <p class="skill_name"><b>'.$skills['w_skill'].'</b></p>
@@ -118,7 +118,7 @@
                                         <hr/>
                                         <div class="clear"></div>
                                         <img class="skill_icon" src="champion_icons/skills_icons/'.$skills['w_icon'].'"  alt="Ikona W">
-                                        <p class="skill_description">'.$skills['w_desc'].'</p>
+                                        <div class="skill_description">'.$skills['w_desc'].'</div>
                                     </div>
                                     <div class="skill_content">
                                         <p class="skill_name"><b>'.$skills['e_skill'].'</b></p>
@@ -127,7 +127,7 @@
                                         <div class="clear"></div>
                                         <hr>
                                         <img class="skill_icon" src="champion_icons/skills_icons/'.$skills['e_icon'].'"  alt="Ikona E">
-                                        <p class="skill_description">'.$skills['e_desc'].'</p>
+                                        <div class="skill_description">'.$skills['e_desc'].'</div>
                                     </div>
                                     <div class="skill_content">
                                         <p class="skill_name"><b>'.$skills['r_skill'].'</b></p>
@@ -136,7 +136,7 @@
                                         <div class="clear"></div>
                                         <hr>
                                         <img class="skill_icon" src="champion_icons/skills_icons/'.$skills['r_icon'].'"  alt="Ikona R">
-                                        <p class="skill_description">'.$skills['r_desc'].'</p>
+                                        <div class="skill_description">'.$skills['r_desc'].'</div>
                                     </div>   
                                 </div>
                         ';

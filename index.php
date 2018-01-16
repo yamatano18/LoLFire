@@ -1,7 +1,12 @@
 <?php
 
     session_start();
-	
+			
+	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+	{
+		header('Location: hello.php');
+		exit();
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -21,9 +26,10 @@
                 <a href="index.php"><img src="images/logo2.png" class="logo" alt="lolfire_logo"></a>
 			</div>
 			<div class="drop_down">
-				<button class="drop_button">Konto</button>
-				<div class="drop_down-content">
-					<a href="a11">Ustawienia konta</a>
+                <a href="hello.php"><button class="drop_button">Konto</button></a>
+                <div class="drop_down-content">
+					<a href="account_settings.php">Ustawienia konta</a>
+                    <a href="add_new_build.php">Dodaj build</a>
 					<a href="a12">Moje buildy</a>
 				</div>
 			</div>
@@ -36,7 +42,7 @@
 				</div>
 			</div>
 			<div class="drop_down">
-				<button class="drop_button">Przedmioty</button>
+				<a href="items.php"><button class="drop_button">Przedmioty</button></a>
 				<div class="drop_down-content">
 					<a href="a31">Znajdź</a>
 					<a href="a32">Porównaj</a>
@@ -44,7 +50,7 @@
 				</div>
 			</div>
 			<div class="drop_down">
-				<button class="drop_button">Mapy</button>
+                <a href="maps.php"><button class="drop_button">Mapy</button></a>
 				<div class="drop_down-content">
 					<a href="sum_rift.php">Summoners Rift</a>
 					<a href="tw_treeline.php">Twisted Treeline</a>
@@ -52,7 +58,7 @@
 				</div>
 			</div>
 			<div class="drop_down">
-				<button class="drop_button">Skórki</button>
+                <a href="skinns.php"><button class="drop_button">Skórki</button></a>
 				<div class="drop_down-content">
 					<a href="a51">a51</a>
 					<a href="a52">a52</a>
@@ -61,13 +67,15 @@
 			</div>
 		</div>
 		<div id="login">
-			<p>
-                <a href="login.php">Zaloguj się!</a>
-            </p>
-			<p>
-                Nie posiadasz jeszcze konta?<br/>
-                <a href="register.php">Zarejestruj się!</a>
-            </p>
+            Jesteś już członkiem LoLFire?
+            <div class="div_link">
+                 <a class="link" href="login.php">Zaloguj się!</a>
+            </div>
+            <br>
+            Nie posiadasz jeszcze konta?
+            <div class="div_link">
+                <a class="link" href="register.php">Zarejestruj się!</a>
+            </div>
 		</div>
 		
 	</div>

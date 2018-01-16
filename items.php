@@ -1,13 +1,7 @@
 <?php
 
-	session_start();
+    session_start();
 
-    if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
-    {
-        header('Location: welcome.php');
-        exit();
-    }
-	
 ?>
 
 <!DOCTYPE HTML>
@@ -18,7 +12,8 @@
     <meta name="description" content="Grasz w League of Legends i szukasz nowych buildów lub innej pomocy? Ta strona jest właśnie dla Ciebie!"/>
     <meta name="keywords" content="league, of, legends, build, buildy, builds, counter"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
- 	<link rel="stylesheet" type="text/css" href="styles/main.css"> 
+ 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/content.css">
 </head>
 <body>
     <div id="container">
@@ -36,7 +31,7 @@
 			<div class="drop_down">
 				<a href="heroes.php"><button class="drop_button">Bohaterowie</button></a>
 				<div class="drop_down-content">
-					<a href="a21">Znajdź bohatera</a>
+					<a href="heroes.php">Znajdź bohatera</a>
 					<a href="a22">Porównaj </a>
 					<a href="a23">*Dodaj</a>
 				</div>
@@ -66,27 +61,42 @@
 				</div>
 			</div>
 		</div>
-		<div id="login">
-			<form action="zaloguj.php" method="post">
-                <?php
-                    if (isset($_SESSION['blad']))
-                        echo $_SESSION['blad'].'<br>';
-                ?>
-				Login: <br/>
-				<input class="input_div" type="text" name="login"> <br/>
-				Hasło: <br/>
-				<input class="input_div" type="password" name="haslo"> <br/>
-				<br/>
-				<input class="click_div" type="submit" value="Zaloguj się"/>
-			</form>
-            <div>
-                Nie posiadasz jeszcze konta?
-                <div class="div_link">
-                    <a class="link" href="register.php">Zarejestruj się!</a>
-                </div>
-            </div>
+		<div class="content">
+<?php
+    require_once "connect.php";
+    $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+    if ($connection->connect_errno != 0)   
+	{
+		echo "Error: ".$connection->connect_errno;
+	}
+	else
+	{
+        @$connection->query("SET CHARSET utf8");
+        if ($result = @$connection->query(sprintf("SELECT * FROM items order by name")))
+		{
+			$num_of_items = $result->num_rows;
+			if ($num_of_items > 0)
+			{
+                for ($i=1; $i <= $num_of_items; $i++)
+                {
+                $row[$i] = $result->fetch_assoc();
+                echo '
+                    <div class="item_button">
+                        <div class="item_icon">
+                            <a href="item_desc.php?item='.($row[$i]['name']).'">
+                                <img src="items_icons/'.$row[$i]['icon'].'" alt="Ikona '.$row[$i]['name'].'">
+                            </a>
+                            <a class="item_name_link" href="item_desc.php?item='.($row[$i]['id']).'">'.$row[$i]['name'].'</a>
+                        </div>
+                    </div>
+                    ';
+                }
+            }
+            $connection->close();
+        }
+    }
+?>
 		</div>
-
 	</div>
 </body>
 </html>

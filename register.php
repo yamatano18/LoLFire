@@ -118,8 +118,15 @@
         }
         catch(Exception $e)
         {
-            echo '<span style="color = red">Błąd serwera, przepraszamy za niedogodności, proszę o rejestrację w innym terminie</span>';
-            echo 'inf developerska: '.$e;
+            echo '
+                <script language="javascript">;
+                    var error_details = "'.$e.'";
+                    console.log("Błąd serwera, przepraszamy za niedogodności. Proszę o rejestrację w innym terminie!");
+                    console.log(error_details);
+                </script>
+            ';
+            //echo '<span style="color = red">Błąd serwera, przepraszamy za niedogodności, proszę o rejestrację w innym terminie</span>';
+            //echo 'inf developerska: '.$e;
         }
     }
 ?>
@@ -185,7 +192,7 @@
 		<div id="login">
 			<form method="post">
 				Login: <br/>
-				<input type="text" name="login"/><br/>
+				<input class="input_div" type="text" name="login"/><br/>
                 <?php
                     if (isset($_SESSION['e_login']))
                     {
@@ -194,7 +201,7 @@
                     }
                 ?>
                 Hasło: <br/>
-				<input type="password" name="haslo1"/><br/>
+				<input class="input_div" type="password" name="haslo1"/><br/>
                 <?php
                     if (isset($_SESSION['e_haslo']))
                     {
@@ -203,9 +210,9 @@
                     }
                 ?>
                 Powtórz hasło: <br/>
-				<input type="password" name="haslo2"/><br/>
+				<input class="input_div" type="password" name="haslo2"/><br/>
                 E-mail: <br/>
-				<input type="text" name="email"/><br/>
+				<input class="input_div" type="text" name="email"/><br/>
                 <?php
                     if (isset($_SESSION['e_email']))
                     {
@@ -214,7 +221,7 @@
                     }
                 ?>
                 <label>
-                   <input type="checkbox" name="regulamin"/>Akceptuję regulamin
+                   <input class="checkbox_input" type="checkbox" name="regulamin"/>Akceptuję regulamin
                 </label>
                 <?php
                     if (isset($_SESSION['e_regulamin']))
@@ -223,9 +230,11 @@
                         unset($_SESSION['e_regulamin']);
                     }
                 ?>
-				<div class="cen">
-					<div class="g-recaptcha" data-sitekey="6LfELjgUAAAAAJa6yZkrFN_8oX5U977UPzuyQE-a"></div>
-				</div>
+                <div class="captcha">
+                    <div class="cen">
+                        <div class="g-recaptcha" data-sitekey="6LfELjgUAAAAAJa6yZkrFN_8oX5U977UPzuyQE-a"></div>
+                    </div>
+                </div>
                 <?php
                     if (isset($_SESSION['e_bot']))
                     {
@@ -233,7 +242,13 @@
                         unset($_SESSION['e_bot']);
                     }
                 ?>
-				<input type="submit" value="Zarejestruj się"/>
+				<input class="click_div" type="submit" value="Zarejestruj się"/>
+                <div>
+                    Jesteś już członkiem LoLFire?
+                    <div class="div_link">
+                        <a class="link" href="login.php">Zaloguj się!</a>
+                    </div>
+                </div>
             </form>
 		</div>
 	</div>

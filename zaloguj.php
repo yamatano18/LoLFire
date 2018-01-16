@@ -21,8 +21,7 @@
 		
 		$login = htmlentities($login, ENT_QUOTES, "UTF-8");
 		
-		if ($result = @$connection->query(sprintf("SELECT * FROM users WHERE login = '%s'",
-		mysqli_real_escape_string($connection, $login))))
+		if ($result = @$connection->query(sprintf("SELECT * FROM users WHERE login = '%s'", mysqli_real_escape_string($connection, $login))))
 		{
 			$num_of_users = $result->num_rows;
 			if ($num_of_users > 0)

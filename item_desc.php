@@ -67,33 +67,59 @@
     $connection = @new mysqli($host, $db_user, $db_password, $db_name);
     if ($connection->connect_errno != 0)   
 	{
-		echo "Error: ".$connection->connect_errno;
+        /* Błąd podczas łączenia z bazą danych */
+        throw new Exception(mysqli_connect_errno());
 	}
 	else
 	{
-		if ($result = @$connection->query(sprintf("SELECT * FROM champions order by name")))
+        /* Poprawne połączenie do bazy, wyciągamy dane z tabel champions i skills w celu wygenerowania strony dla przesłanego bohatera z metody GET */
+        @$connection->query("SET CHARSET utf8");
+		if ($items_db = @$connection->query(sprintf("SELECT * FROM items where id='".$_GET['item']."'")))
 		{
-			$num_of_heroes = $result->num_rows;
-			if ($num_of_heroes > 0)
+            $num_of_items_db = $items_db->num_rows;
+			if ($num_of_items_db == 1)
 			{
-                for ($i=1; $i<=$num_of_heroes; $i++)
-                {
-                $row[$i] = $result->fetch_assoc();
+                /* Mamy dane dla przedmiotu w tabeli items, generujemy stronę */
+                $items = $items_db->fetch_assoc();
                 echo '
-                    <div class="hero_button">
-                        <div class="hero_icon">
-                            <a href="champ_desc.php?champ='.($row[$i]['name']).'">
-                                <img src="champion_icons/'.$row[$i]['icon'].'" alt="ikona '.$row[$i]['name'].'">
-                            </a>
-                            <a class="hero_name_link" href="champ_desc.php?champ='.($row[$i]['name']).'">'.$row[$i]['name'].'</a>
+                    <div class="item_description">
+                        <img class="item_icon_big" src="items_icons/'.$items['icon'].'" alt="Ikona">
+                        <div class="left">
+                            <div class="item_name">'.$items['name'].'</div>
+                            <div class="item_cost">Koszt: '.$items['cost'].' złota</div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="item_content">
+                            <div class="clear"></div>
+                            <hr>
+                            <div class="item_details">Statystyki</div>
+                            <div>'.$items['statistics'].'</div>
+                            <hr>
+                            <div class="item_details">Bierne</div>
+                            <div>'.$items['details'].'</div>
                         </div>
                     </div>
-                    ';
-                }
+                ';
             }
-            $connection->close();
+            else
+            {
+                /* Brak danych dla przedmiotu w tabeli items */
+                echo '
+                    Tabela items nie zawiera danych dla '.$_GET['item']
+                ;
+            }
+        }
+        else
+        {   
+        /* Poprawne połączenie z bazą, ale nie ma w niej podanego przedmiotu */
+        echo '
+            Przedmiotu o nazwie '.$_GET['item'].' nie ma w bazie! Poproś właściciela o dodanie.
+            ';
         }
     }
+    /* Zamykam połączenie z bazą */ 
+    $connection->close();
+    
 ?>
 		</div>
 	</div>
