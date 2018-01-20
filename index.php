@@ -23,7 +23,7 @@
     <div id="container">
 		<div class="menu">
             <div class="logo">
-                <a href="index.php"><img src="images/logo2.png" class="logo" alt="lolfire_logo"></a>
+                <a href="index.php"><img src="images/logo.png" class="logo" alt="lolfire_logo"></a>
 			</div>
 			<div class="drop_down">
                 <a href="hello.php"><button class="drop_button">Konto</button></a>
