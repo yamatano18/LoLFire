@@ -1,8 +1,8 @@
 #build_box
 {
+    min-height: 500px;
+    width: 780px;
     float: left;
-    width: 740px;
-    height: 800px;
     background-color: #2c2a29;
     margin-left: 50px;
     margin-top: 20px;
@@ -16,7 +16,7 @@
 {
     background-color: #333;
     box-shadow: 0px 0px 30px 5px #e97531;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -45,6 +45,8 @@
     border-width: 3px;
     font-size: 30px;
     padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     box-shadow: 0px 0px 10px 10px #000;
 }
 .item_icon_small img 
@@ -87,4 +89,77 @@
     width: 60px;
     font-size: 10px;
     height: auto;
+}
+
+
+table.skills_set {
+    margin-top: 5px;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+td {
+    padding: 3px;
+    border: 3px solid #000;
+    text-align: center;
+    vertical-align: middle; 
+}
+
+.regular-radio {
+    display: none;
+}
+
+.regular-radio + label {
+    -webkit-appearance: none;
+    background-color: #b1acac;
+    border: 5px solid #b1acac;
+    border-radius: 14px;
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    width: 7px;
+    height: 7px;
+    vertical-align: middle; 
+}
+
+.regular-radio:checked + label {
+    background: #258025;
+    border: 5px solid #b1acac;  
+}
+.regular-radio:disabled + label {
+    background: #e21818;
+    border: 5px solid #b1acac;  
+}
+
+.input_box
+{
+    max-width: 662px;
+    width: 500px;
+    height: 100px;
+    background-color: #2c2a29;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 10px #000;
+    text-align: left;
+    color: #FFF;
+}
+
+#char_counter
+{
+    width: 300px;
+    padding: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px 10px #000;
+    display: block;
+}
+
+.colorWhite
+{
+    color: #fff;
+}
+.redWhite
+{
+    color: #a51515;
 }
